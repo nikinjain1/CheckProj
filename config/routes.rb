@@ -2,16 +2,16 @@ CheckProj::Application.routes.draw do
   get "users/new"
 
   resources :users
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :sessions, :only => [:new, :create, :destroy]
 
-  root to: 'static_pages#home'
+  root :to => 'static_pages#home'
 
-  match '/signup', to: 'users#new'
-  match '/signin', to: 'sessions#new'
-  match '/signout', to: 'session#destroy'
+  match '/signup', :to => 'users#new'
+  match '/signin', :to => 'sessions#new'
+  match '/signout', :to => 'session#destroy'
 
-  match '/help', to:'static_pages#help'
-  match '/about', to:'static_pages#about'
+  match '/help', :to => 'static_pages#help'
+  match '/about', :to => 'static_pages#about'
 
   get "static_pages/home"
 
