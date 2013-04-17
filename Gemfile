@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
+gem 'tinymce-rails'
 
 group :development do
   gem 'sqlite3', '1.3.5'

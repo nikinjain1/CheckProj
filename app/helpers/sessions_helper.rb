@@ -40,7 +40,7 @@ module SessionsHelper
     unless signed_in?
       store_location
       redirect_to signin_url, :notice => "Please Sign In"
+      end
   end
-end
 
 end
