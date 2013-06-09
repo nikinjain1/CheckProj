@@ -21,6 +21,20 @@ class MicropostsController < ApplicationController
     redirect_to root_url
   end
 
+  def repost
+    m = Micropost.find(params[:micropost])
+    @micropost = Micropost.new
+    @micropost.content = m.content
+    @micropost.user_id = current_user.id
+    if @micropost.save
+      flash[:success] = "Micropost created!"
+      redirect_to root_url
+    else
+      @feed_items = []
+      render 'static_pages/home'
+    end
+  end
+
   private
 
   def correct_user

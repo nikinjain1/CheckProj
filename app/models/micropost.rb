@@ -1,4 +1,5 @@
 class Micropost < ActiveRecord::Base
+  has_ancestry
   attr_accessible :content
   belongs_to :user
 
