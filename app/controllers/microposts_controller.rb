@@ -27,7 +27,7 @@ class MicropostsController < ApplicationController
     @micropost.content = m.content
     @micropost.user_id = current_user.id
     if @micropost.save
-      flash[:success] = "Micropost created!"
+      flash[:success] = "Micropost reposted!"
       redirect_to root_url
     else
       @feed_items = []
